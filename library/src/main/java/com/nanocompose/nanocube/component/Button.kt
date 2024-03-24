@@ -8,6 +8,8 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -16,7 +18,10 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.nanocompose.nanocube.helper.ThemePreviews
+import com.nanocompose.nanocube.ui.theme.NanoCubeTheme
 import com.nanocompose.nanocube.ui.theme.SelectedButtonBackground
 import com.nanocompose.nanocube.ui.theme.SelectedColor
 import com.nanocompose.nanocube.ui.theme.UnSelectedColor
@@ -83,5 +88,27 @@ fun NanoCubeIconButton(
             contentDescription = null,
             colorFilter = ColorFilter.tint(tint)
         )
+    }
+}
+
+@Preview
+@Composable
+fun ButtonPreview() {
+    NanoCubeTheme {
+        NanoCubeButton(
+            onClick = {},
+            text = "Custom Button Sample"
+        )
+    }
+}
+
+@ThemePreviews
+@Composable
+fun IconButtonPreview() {
+    NanoCubeTheme {
+        NanoCubeIconButton(
+            Icons.Filled.Star,
+            Color.Red
+        ) {}
     }
 }
