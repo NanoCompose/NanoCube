@@ -43,11 +43,12 @@ dependencies {
 
     implementation(libs.androidx.core.ktx)
 
-    api(platform(libs.androidx.compose.bom))
-    api(libs.androidx.ui)
-    api(libs.androidx.ui.graphics)
-    api(libs.androidx.ui.tooling.preview)
-    api(libs.androidx.material3)
+    implementation(platform(libs.androidx.compose.bom))
+    implementation(libs.androidx.ui)
+    implementation(libs.androidx.ui.graphics)
+    implementation(libs.androidx.ui.tooling.preview)
+    implementation(libs.androidx.material3)
+    implementation(libs.androidx.navigation.compose)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -61,9 +62,13 @@ afterEvaluate {
 
                 from(components["release"])
 
-                groupId = "com.github.nanocompose"
+//                groupId = "com.github.nanocompose"
+//                artifactId = "nano-cube"
+//                version = "0.1.2-alpha"
+
+                groupId = "com.nanocompose"
                 artifactId = "nano-cube"
-                version = "0.1.0-alpha"
+                version = "1.0"
 
             }
         }
